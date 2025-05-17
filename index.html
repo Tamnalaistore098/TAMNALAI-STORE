@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TAMNALAI STORE - MLBB Top-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>TAMNALAI STORE - MLBB Top-Up</h2>
+    <label for="playerID">Player ID:</label>
+    <input type="text" id="playerID" placeholder="Enter your MLBB ID">
+
+    <label for="serverID">Server ID:</label>
+    <input type="text" id="serverID" placeholder="Enter your Server ID">
+
+    <label for="diamonds">Select Diamonds:</label>
+    <select id="diamonds">
+        <optgroup label="SMALL PACKS">
+            <option value="5💎 = ₹13">5💎 = ₹13</option>
+            <option value="11💎 = ₹20">11💎 = ₹20</option>
+            <option value="14💎 = ₹25">14💎 = ₹25</option>
+            <option value="22💎 = ₹35">22💎 = ₹35</option>
+            <option value="44💎 = ₹70">44💎 = ₹70</option>
+            <option value="56💎 = ₹79">56💎 = ₹79</option>
+            <option value="86💎 = ₹110">86💎 = ₹110</option>
+            <option value="114💎 = ₹155">114💎 = ₹155</option>
+        </optgroup>
+        <optgroup label="MEDIUM PACKS">
+            <option value="172💎 = ₹205">172💎 = ₹205</option>
+            <option value="257💎 = ₹305">257💎 = ₹305</option>
+            <option value="343💎 = ₹415">343💎 = ₹415</option>
+            <option value="429💎 = ₹505">429💎 = ₹505</option>
+            <option value="514💎 = ₹625">514💎 = ₹625</option>
+            <option value="600💎 = ₹725">600💎 = ₹725</option>
+            <option value="706💎 = ₹835">706💎 = ₹835</option>
+            <option value="792💎 = ₹915">792💎 = ₹915</option>
+            <option value="878💎 = ₹1085">878💎 = ₹1085</option>
+            <option value="963💎 = ₹1125">963💎 = ₹1125</option>
+        </optgroup>
+        <optgroup label="LARGE PACKS">
+            <option value="1135💎 = ₹1395">1135💎 = ₹1395</option>
+            <option value="2195💎 = ₹2435">2195💎 = ₹2435</option>
+            <option value="3688💎 = ₹4375">3688💎 = ₹4375</option>
+            <option value="5532💎 = ₹6375">5532💎 = ₹6375</option>
+            <option value="6585💎 = ₹7345">6585💎 = ₹7345</option>
+            <option value="9324💎 = ₹10225">9324💎 = ₹10225</option>
+        </optgroup>
+        <optgroup label="SPECIAL">
+            <option value="WEEKLY PASS = ₹129">WEEKLY PASS = ₹129</option>
+            <option value="TWILIGHT PASS = ₹685">TWILIGHT PASS = ₹685</option>
+        </optgroup>
+    </select>
+
+    <label for="payment">Payment Method:</label>
+    <select id="payment">
+        <option value="UPI">UPI</option>
+    </select>
+
+    <button onclick="submitForm()">Submit Order</button>
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+function submitForm() {
+    const playerID = document.getElementById('playerID').value;
+    const serverID = document.getElementById('serverID').value;
+    const diamonds = document.getElementById('diamonds').value;
+    const payment = document.getElementById('payment').value;
+
+    if (playerID && serverID) {
+        document.getElementById('result').innerText =
+            `Order placed successfully!
+Player ID: ${playerID} (${serverID})
+Pack: ${diamonds}
+Payment: ${payment}
+(Note: Demo only)`;
+    } else {
+        alert('Please fill in both Player ID and Server ID.');
+    }
+}
+</script>
+</body>
+</html>
